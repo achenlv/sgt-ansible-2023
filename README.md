@@ -13,5 +13,7 @@
 - Configure nginx on frontend server.
 
 ## Useful links
--  https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.2/
+- https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.2/
 - https://services.gradle.org/distributions/
+- https://github.com/darinpope/jenkins-example-ansible/
+- https://code-maven.com/install-and-configure-nginx-using-ansible
