@@ -17,7 +17,7 @@
 - https://services.gradle.org/distributions/
 
 ## Useful commands
-- ```ansible-playbook playbook.yaml [--extra-vars var1=value1] [--private-key private.key]```
+- ```ansible-playbook playbook.yaml [-i hosts] [--extra-vars var1=value1] [--private-key private.key]```
 - ```ansible-galaxy collection install -r requirements.yaml```
 
 ## Infrastructure
