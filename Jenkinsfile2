@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   parameters {
-    string defaultValue: 'all', name: 'Hosts'
+    string defaultValue: 'inventory/hosts', name: 'Hosts'
 
   }
   environment {
