@@ -15,3 +15,10 @@
 ## Useful links
 -  https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.2/
 - https://services.gradle.org/distributions/
+
+## Useful commands
+- ```ansible-playbook playbook.yaml [--extra-vars var1=value1] [--private-key private.key]```
+- ```ansible-galaxy collection install -r requirements.yaml```
+
+## Infrastructure
+![image](https://github.com/achenlv/sgt-ansible-2023/assets/48532727/ccafb42f-f0ec-489a-9d1c-2ba07cff3a77)
