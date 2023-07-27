@@ -1,0 +1,28 @@
+---
+- name: Task4
+  hosts: {{ nodes }} 
+  gather_facts: false
+  tasks:
+
+  - name: Create destination directory
+    ansible.builtin.file:
+      path: /tmp/java/bin/
+      state: directory
+      
+  - name: Download Gradle binary archive
+    ansible.builtin.get_url:
+      url: https://services.gradle.org/distributions/gradle-8.2.1-bin.zip
+      dest: /tmp/
+    register: file_downloaded
+
+  - name: Extract Gradle archive
+    unarchive:
+      src: file_downloaded.dest
+      dest: /tmp/java/bin/
+      remote_src: yes
+    register: extracted
+
+#  - name: alternative way
+#    ansible.builtin.shell: curl -s https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.2/dnsjava-3.5.2.jar -LO
+
+  - debug: var=extracted
