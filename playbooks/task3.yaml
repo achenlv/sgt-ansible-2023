@@ -3,6 +3,12 @@
   hosts: all
   tasks:
 
+  - name: Create destination directory
+    # ansible.built.shell: mkdir -p /tmp/java/libraries/
+    ansible.built.file:
+      path: /tmp/java/libraries/
+      state: directory
+      
   - name: Download java dns library
     ansible.builtin.get_url:
       url: https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.2/dnsjava-3.5.2.jar
