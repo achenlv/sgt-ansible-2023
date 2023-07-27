@@ -17,9 +17,9 @@ pipeline {
         sh '''#!/usr/bin/env bash
           ansible-galaxy collection install -r requirements.yaml
           ansible-playbook -i ${Hosts} \
-            --private-key=${ANSIBLE_PRIVATE_KEY} \
-            --extra-vars nodews=${NODES} \
-            playbooks/task4.yaml
+                  --private-key=${ANSIBLE_PRIVATE_KEY} \
+                  --extra-vars nodes=${NODES} \
+                  playbooks/task4.yaml
         '''
       }
     }
