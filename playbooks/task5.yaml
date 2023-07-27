@@ -4,12 +4,14 @@
   # gather_facts: false
   tasks:
 
-  - name: check value of return code
+  - name: check value of some vars
     ansible.builtin.debug:
-      var:
-        - hosts
-        - nodes
-    
+      var: hosts
+      
+  - name: check value of some vars
+    ansible.builtin.debug:
+      var: nodes
+
   - name: Create destination directory
     ansible.builtin.file:
       path: /tmp/java/libraries/
