@@ -4,9 +4,9 @@
   # gather_facts: false
   tasks:
 
-  - name: check value of some vars
+  - name: Show facts available on the system
     ansible.builtin.debug:
-      var: hosts
+      var: ansible_facts
       
   - name: check value of some vars
     ansible.builtin.debug:
