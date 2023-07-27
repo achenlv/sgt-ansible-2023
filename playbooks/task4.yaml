@@ -32,6 +32,7 @@
   - name: alternative way
     ansible.builtin.shell: |
       export PATH=/tmp/java/bin/;$PATH
-      /tmp/java/bin/gradle-8.2.1/bin/gradle --version
+      #/tmp/java/bin/gradle-8.2.1/bin/gradle --version
+      gradle --version
       exit 0
   - debug: var=extracted
