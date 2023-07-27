@@ -5,3 +5,6 @@
 
   - name: Execute the command in remote shell; stdout goes to the specified file on the remote
     ansible.builtin.shell: ansible --version
+    register: ans_version
+
+  - debug: var=ans_version.stdout_lines
