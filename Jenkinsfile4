@@ -8,8 +8,8 @@ pipeline {
   environment {
     ANSIBLE_HOST_KEY_CHECKING="False"
     ANSIBLE_PRIVATE_KEY=credentials('ansible-private-key') 
-    HOSTS="${params.Hosts}"
-    NODES="${params.Nodes}"
+    # HOSTS="${params.Hosts}"
+    # NODES="${params.Nodes}"
   }
   stages {
     stage('Ansible') {
@@ -18,7 +18,7 @@ pipeline {
           ansible-galaxy collection install -r requirements.yaml
           ansible-playbook -i ${Hosts} \
                   --private-key=${ANSIBLE_PRIVATE_KEY} \
-                  --extra-vars nodes=${env.NODES} \
+                  --extra-vars nodes=${Nodes} \
                   playbooks/task4.yaml
         '''
       }
