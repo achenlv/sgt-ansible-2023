@@ -5,7 +5,7 @@
 
   - name: Create destination directory
     # ansible.built.shell: mkdir -p /tmp/java/libraries/
-    ansible.built.file:
+    ansible.builtin.file:
       path: /tmp/java/libraries/
       state: directory
       
