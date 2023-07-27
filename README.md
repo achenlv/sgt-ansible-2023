@@ -9,7 +9,7 @@
 - Update playbook to have hosts as parameter variable.
 - Make sure that all your servers have latest Java dns library.
 - Put Gradle binary in backend server, and get gradle version.
-- Use ‘where’ condition for task to combine playbooks 4 and 5.
+- Use ‘where’ condition for task to combine playbooks 3 and 4.
 - Configure nginx on frontend server.
 
 ## Useful links
