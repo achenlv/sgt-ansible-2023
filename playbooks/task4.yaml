@@ -4,7 +4,7 @@
   gather_facts: false
   tasks:
 
-  - names: Install prerequisite tools
+  - name: Install prerequisite tools
     ansible.builtin.apt:
       pkg:
       - unzip
