@@ -8,8 +8,8 @@ pipeline {
   environment {
     ANSIBLE_HOST_KEY_CHECKING="False"
     ANSIBLE_PRIVATE_KEY=credentials('ansible-private-key') 
-    # HOSTS="${params.Hosts}"
-    # NODES="${params.Nodes}"
+    // HOSTS="${params.Hosts}"
+    // NODES="${params.Nodes}"
   }
   stages {
     stage('Ansible') {
