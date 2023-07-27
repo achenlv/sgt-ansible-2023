@@ -17,7 +17,7 @@
 
   - name: Extract Gradle archive
     unarchive:
-      src: file_downloaded.dest
+      src: "{{ file_downloaded.dest }}"
       dest: /tmp/java/bin/
       remote_src: yes
     register: extracted
