@@ -56,6 +56,7 @@ Resources:
             EOF
             source /etc/instance-tags
             export IP=$(hostname -i)
+            #echo "ec2-user ALL=ALL NOPASSWD: ALL" > /etc/sudoers.d/ec2 
             apt update
             apt install -y python3-pip
             pip3 upgrade --install pip
