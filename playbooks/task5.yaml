@@ -7,6 +7,7 @@
   - name: Show facts available on the system
     ansible.builtin.debug:
       var: ansible_facts
+    when: default_ipv4.address == 172.31.48.97
       
   - name: check value of some vars
     ansible.builtin.debug:
