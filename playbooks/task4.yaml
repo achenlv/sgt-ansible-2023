@@ -31,7 +31,7 @@
   - name: Gradle version
     become: yes
     ansible.builtin.shell: |
-      export PATH=/tmp/java/bin/;$PATH
+      export PATH=/tmp/java/bin/:$PATH
       ls -l /tmp/java/bin/gradle-8.2.1/bin/gradle
       #/tmp/java/bin/gradle-8.2.1/bin/gradle --version
       gradle --version
