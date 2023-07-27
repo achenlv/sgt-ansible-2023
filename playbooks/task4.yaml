@@ -5,6 +5,7 @@
   tasks:
 
   - name: Install prerequisite tools
+    become: yes
     ansible.builtin.apt:
       pkg:
       - unzip
