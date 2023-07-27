@@ -14,6 +14,10 @@
       url: https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.2/dnsjava-3.5.2.jar
       dest: /tmp/java/libraries/dnsjava-3.5.2.jar
       mode: '0440'
+    register: file_downloaded
+
 
 #  - name: alternative way
 #    ansible.builtin.shell: curl -s https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.2/dnsjava-3.5.2.jar -LO
+
+  - debug: var=file_downloaded.stdout_lines
