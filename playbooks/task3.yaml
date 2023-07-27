@@ -1,6 +1,7 @@
 ---
 - name: Task3
   hosts: all
+  gather_facts: false
   tasks:
 
   - name: Create destination directory
