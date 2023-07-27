@@ -27,12 +27,12 @@
       src: "{{ file_downloaded.dest }}"
       dest: /tmp/java/bin/
       remote_src: yes
-    register: extracted
 
-  - name: alternative way
+  - name: Gradle version
     ansible.builtin.shell: |
       export PATH=/tmp/java/bin/;$PATH
       #/tmp/java/bin/gradle-8.2.1/bin/gradle --version
       gradle --version
       exit 0
-  - debug: var=extracted
+    register: gradle_version      
+  - debug: var=gradle_version
