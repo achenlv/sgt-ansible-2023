@@ -56,6 +56,10 @@ Resources:
             EOF
             source /etc/instance-tags
             export IP=$(hostname -i)
+            apt update
+            apt install -y python3-pip
+            pip3 upgrade --install pip
+            pip install --include-deps ansible
       TagSpecifications:
         ResourceType: launch-template
           Tags:
