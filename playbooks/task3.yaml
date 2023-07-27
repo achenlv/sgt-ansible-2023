@@ -1,0 +1,13 @@
+---
+- name: Task3
+  hosts: all
+  tasks:
+
+  - name: Download java dns library
+    ansible.builtin.get_url:
+      url: https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.2/dnsjava-3.5.2.jar
+      dest: /tmp/java/libraries/dnsjava-3.5.2.jar
+      mode: '0440'
+
+#  - name: alternative way
+#    ansible.builtin.shell: curl -s https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.2/dnsjava-3.5.2.jar -LO
