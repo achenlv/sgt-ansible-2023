@@ -1,0 +1,64 @@
+---
+- name: Task3
+  hosts: all
+  gather_facts: false
+  tasks:
+
+  - name: Create destination directory
+    ansible.builtin.file:
+      path: /tmp/java/libraries/
+      state: directory
+      
+  - name: Download java dns library
+    ansible.builtin.get_url:
+      url: https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.2/dnsjava-3.5.2.jar
+      dest: /tmp/java/libraries/dnsjava-3.5.2.jar
+      mode: '0440'
+    register: file_downloaded
+
+  - debug: var=file_downloaded.dest
+
+  - name: Install prerequisite tools
+    become: yes
+    ansible.builtin.apt:
+      pkg:
+      - unzip
+      state: present
+
+  - name: Create destination directory
+    when: nodes == "backend" 
+    ansible.builtin.file:
+      path: /tmp/java/bin/
+      state: directory
+      
+  - name: Download Gradle binary archive
+    when: nodes == "backend" 
+    ansible.builtin.get_url:
+      url: https://services.gradle.org/distributions/gradle-8.2.1-bin.zip
+      dest: /tmp/
+    register: file_downloaded
+
+  - name: Extract Gradle archive
+    when: nodes == "backend" 
+    unarchive:
+      src: "{{ file_downloaded.dest }}"
+      dest: /tmp/java/bin/
+      remote_src: yes
+
+  - name: Gradle version
+    become: yes
+    when: nodes == "backend" 
+    ansible.builtin.shell: |
+      export PATH=/tmp/java/bin/:$PATH
+      ls -l /tmp/java/bin/gradle-8.2.1/bin/gradle
+      #/tmp/java/bin/gradle-8.2.1/bin/gradle --version
+      gradle --version
+      exit 0
+    register: gradle_version   
+    
+  - debug: var=gradle_version
+
+  - name: Show facts available on the system
+    when: nodes == "frontend" 
+    ansible.builtin.debug:
+      var: ansible_facts
