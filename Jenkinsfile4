@@ -20,6 +20,7 @@ pipeline {
                   --private-key=${ANSIBLE_PRIVATE_KEY} \
                   --extra-vars nodes=${Nodes} \
                   playbooks/task4.yaml
+          # can use --start-at-task="task-name" parameter to skip some tasks && start playbook from specified
         '''
       }
     }
