@@ -1,6 +1,6 @@
 ---
 - name: Task4
-  hosts: {{ nodes }} 
+  hosts: "{{ nodes }}"
   gather_facts: false
   tasks:
 
