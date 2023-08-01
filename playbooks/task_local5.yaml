@@ -1,0 +1,17 @@
+- name: Task2
+  hosts: localhost
+  connection: local
+  gather_facts: true
+  tasks:
+
+  # - name: Show facts available on the system
+  #   ansible.builtin.debug:
+  #     var: ansible_facts
+
+  - name: Execute the command in remote shell; stdout goes to the specified file on the remote
+    # Quick question. Bassed on output from prev task, could it be that your distribution is Ubuntu?
+    when: ansible_facts['distribution'] == "Debian"
+    ansible.builtin.shell: ansible --version
+    register: ans_version
+
+  - debug: var=ans_version.stdout_lines

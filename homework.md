@@ -77,3 +77,9 @@ ok: [localhost] => {
 PLAY RECAP ****************************************************************************************************************************************************************
 localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 </pre>
+
+
+
+## Some more links for homework solution
+[https://www.digitalocean.com/community/tutorials/how-to-use-conditionals-in-ansible-playbooks]
+[https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_conditionals.html]
